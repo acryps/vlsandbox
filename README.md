@@ -1,7 +1,5 @@
 [![npm version](http://badge.acryps.com/npm/vlsandbox)](http://badge.acryps.com/go/npm/vlsandbox)
 
-<img src="doc/assets/logo.svg" height="50">
-
 # vlsandbox Scoped Sandbox
 Need to run external code (e.g. Plugins)) in your application, without exposing `window` object? Try vlsandbox
 
