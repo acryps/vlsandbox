@@ -32,6 +32,6 @@ export class Sandbox {
         const main = new Function(...variables, this.source);
 
         // run function
-        main(variables.map(key => key in this.exposedVariables ? this.exposedVariables[key] : null));
+        main(...variables.map(key => key in this.exposedVariables ? this.exposedVariables[key] : null));
     }
 }
