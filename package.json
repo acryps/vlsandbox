@@ -1,0 +1,21 @@
+{
+	"name": "vlsandbox",
+	"version": "1.0.0",
+	"description": "Scoped Sandbox",
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"scripts": {
+		"preversion": "git pull",
+		"postversion": "git push",
+		"prepare": "tsc"
+	},
+	"author": "Levi Hechenberger & luucy AG",
+	"license": "GPL-3.0-only",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vlvtin/vlsandbox.git"
+	},
+	"keywords": [
+		"sandbox"
+	]
+}
