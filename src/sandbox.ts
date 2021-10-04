@@ -15,7 +15,7 @@ export class Sandbox {
                 //    const globals = (function () { return this })();
                 //
                 case "function": {
-                    throw new Error("Unsafe sandbox input. Convert function() to arrow functions.");
+                    throw new Error("Unsafe sandbox input. Convert conventional functions to arrow functions. Guide: https://github.com/vlvtin/vlsandbox/blob/master/doc/functions.md");
 
                     break;
                 }
