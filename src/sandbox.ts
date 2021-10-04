@@ -51,11 +51,16 @@ export class Sandbox {
             ...Object.keys(this.exposedVariables)
         ];
 
-        // create scoped function
-        const main = new Function(...variables, [
+        // add null assignments for all globals, because some global constructors are still callable
+        const body = [
             ...this.globals.map(global => `${global} = null;`),
             this.source
-        ].join("\n")).bind(scope || {});
+        ].join("\n")
+
+        console.log("body", body);
+
+        // create scoped function
+        const main = new Function(...variables, body).bind(scope || {});
 
         // run function
         main(...variables.map(key => key in this.exposedVariables ? this.exposedVariables[key] : null));
