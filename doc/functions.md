@@ -30,7 +30,7 @@ function add(a, b) {
 const add = (a, b) => a + b;
 ```
 
-## Functions as Classes
+## Functions as Classes
 Javascript used to not have classes, so people used functions with `this`. 
 
 ```
