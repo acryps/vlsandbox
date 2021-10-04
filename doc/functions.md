@@ -10,7 +10,7 @@ function test(foo, bar) {
 test(1, 2);
 ```
 
-The arrow function alternative looks like this:
+The [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) alternative looks like this:
 ```
 const test = (test, bar) => {
     // some code ...
@@ -18,8 +18,6 @@ const test = (test, bar) => {
 
 test(1, 2);
 ```
-
----
 
 Pro tip: Arrow functions allow you to make one-liner functions much shorter:
 ```
@@ -41,7 +39,7 @@ function Test(parameter) {
 }
 ```
 
-The new way to do it looks like this and will work in vlsandbox:
+The [new and proper way](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) to do it looks like this:
 ```
 class Test {
     constructor(parameter) {}
