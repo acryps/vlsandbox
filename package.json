@@ -17,5 +17,8 @@
 	},
 	"keywords": [
 		"sandbox"
-	]
+	],
+	"dependencies": {
+		"esprima": "^4.0.1"
+	}
 }
