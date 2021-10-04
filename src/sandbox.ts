@@ -27,7 +27,7 @@ export class Sandbox {
 
     reset() {
         this.exposedVariables = {};
-        this.globals = Object.keys(globalThis);
+        this.globals = Object.getOwnPropertyNames(globalThis);
     }
 
     expose(name: string, value?: any) {
@@ -51,16 +51,8 @@ export class Sandbox {
             ...Object.keys(this.exposedVariables)
         ];
 
-        // add null assignments for all globals, because some global constructors are still callable
-        const body = [
-            ...this.globals.map(global => `${global} = null;`),
-            this.source
-        ].join("\n")
-
-        console.log("body", body);
-
         // create scoped function
-        const main = new Function(...variables, body).bind(scope || {});
+        const main = new Function(...variables, this.source).bind(scope || {});
 
         // run function
         main(...variables.map(key => key in this.exposedVariables ? this.exposedVariables[key] : null));
