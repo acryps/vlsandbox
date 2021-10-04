@@ -53,7 +53,7 @@ export class Sandbox {
 
         // create scoped function
         const main = new Function(...variables, [
-            ...this.globals.map(global => `const ${global} = null;`),
+            ...this.globals.map(global => `${global} = null;`),
             this.source
         ].join("\n")).bind(scope || {});
 
