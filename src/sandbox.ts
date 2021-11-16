@@ -4,10 +4,12 @@ export class Sandbox {
     exposedVariables;
     globals;
 
-    constructor(private source: string) {
+    constructor(private source: string, private allowGeneratorFunctions = false) {
         const tokens = esprima.tokenize(source);
 
-        for (let token of tokens) {
+        for (let i = 0; i < tokens.length; i++) {
+            const token = tokens[i];
+
             switch (token.value) {
                 // check for function() in source
                 // you could use the following code to escape the sandbox because referencing this in a function will return the globalThis
@@ -15,6 +17,12 @@ export class Sandbox {
                 //    const globals = (function () { return this })();
                 //
                 case "function": {
+                    if (allowGeneratorFunctions) {
+                        if (tokens[i + 1]?.value == "*") {
+                            break;
+                        }
+                    }
+
                     throw new Error("Unsafe sandbox input. Convert conventional functions to arrow functions. Guide: https://github.com/vlvtin/vlsandbox/blob/master/doc/functions.md");
 
                     break;
