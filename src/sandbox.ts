@@ -35,7 +35,7 @@ export class Sandbox {
 
     reset() {
         this.exposedVariables = {};
-        this.globals = Object.getOwnPropertyNames(globalThis);
+        this.globals = Object.getOwnPropertyNames(globalThis).filter(name => !(/^[0-9]+$/.test(name)));
     }
 
     expose(name: string, value?: any) {
