@@ -1,6 +1,6 @@
 {
 	"name": "vlsandbox",
-	"version": "2.5.2",
+	"version": "2.5.3",
 	"description": "Scoped Sandbox",
 	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
