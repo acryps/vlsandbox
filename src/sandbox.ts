@@ -5,7 +5,7 @@ export class Sandbox {
     globals;
 
     constructor(private source: string, private allowGeneratorFunctions = false) {
-        const tokens = espree.tokenize(source);
+        const tokens = espree.tokenize(source, { ecmaVersion: 'latest' });
 
         for (let i = 0; i < tokens.length; i++) {
             const token = tokens[i];
