@@ -1,11 +1,11 @@
-import * as esprima from "esprima";
+import * as espree from 'espree';
 
 export class Sandbox {
     exposedVariables;
     globals;
 
     constructor(private source: string, private allowGeneratorFunctions = false) {
-        const tokens = esprima.tokenize(source);
+        const tokens = espree.tokenize(source);
 
         for (let i = 0; i < tokens.length; i++) {
             const token = tokens[i];

@@ -19,6 +19,6 @@
 		"sandbox"
 	],
 	"dependencies": {
-		"esprima": "^4.0.1"
+		"espree": "^9.3.2"
 	}
 }
